@@ -1,0 +1,115 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--main-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  width: 100%;
+}
+
+.page {
+  font-family: "Saira";
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 25vh;
+}
+
+.h1 {
+  font-size: 6rem;
+  margin-bottom: 5vh;
+}
+
+.progress-bg {
+  background: #e6e9ed;
+  height: 5vh;
+  border-radius: 6px;
+  width: 30vw;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1vh;
+}
+
+.progress-bar {
+  background: #ac92ec;
+  height: 100%;
+  width: 0;
+  transition: width 0.5s ease;
+  position: relative;
+}
+
+.progress-bar:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 40px 40px;
+  animation: progress_bar 0.8s linear infinite;
+  transition: opacity 0.5s ease;
+}
+
+.progress-bar.full:after {
+  animation: none;
+  opacity: 0;
+}
+
+@keyframes progress_bar {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -40px 0;
+  }
+}
+
+.btn {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: transparent;
+  border-radius: 6px;
+}
